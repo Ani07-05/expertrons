@@ -1,7 +1,30 @@
-Flask==2.1.1
+# Flask and its extensions
+flask==2.0.3
+flask-wtf==1.0.0
+flask-sqlalchemy==2.5.1
+flask-login==0.5.0
+
+# Google Sheets API client
+gspread==5.4.0
+
+# OAuth2 for authentication with Google API
+oauth2client==4.1.3
+
+# SQLAlchemy for database
+sqlalchemy==1.4.22
+
+# WTForms for form handling
+wtforms==2.3.3
+
+# Requests for making HTTP requests
+requests==2.26.0
+
+# Bootstrap for front-end styling
+bootstrap-flask==2.0.4
+
+# Gunicorn for running the app
 gunicorn==20.1.0
-Jinja2==3.0.3
-itsdangerous==2.1.1
-Werkzeug==2.1.1
-click==8.1.3
-bootstrap-flask==1.5.3
+
+# Other useful packages
+numpy==1.21.2
+pandas==1.3.3
