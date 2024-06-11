@@ -20,7 +20,7 @@ wtforms==2.3.3
 requests==2.26.0
 
 # Bootstrap for front-end styling
-bootstrap-flask==2.0.4
+bootstrap-flask==2.3.3
 
 # Gunicorn for running the app
 gunicorn==20.1.0
