@@ -1,0 +1,28 @@
+<!-- edit_registration.html -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit Registration</title>
+    <!-- Add your CSS styles or link a CSS file here -->
+</head>
+<body><center>
+    <h1>Edit Registration</h1>
+    <form action="{{ url_for('update_registration', id=registration_data[0]) }}" method="POST">
+        <input type="hidden" name="id" value="{{ registration_data[0] }}">
+        <label for="fullname">Full Name:</label><br>
+        <input type="text" id="fullname" name="fullname" value="{{ registration_data[1] }}"><br>
+        <label for="email">Email:</label><br>
+        <input type="email" id="email" name="email" value="{{ registration_data[2] }}"><br>
+        <label for="program">Program:</label><br>
+        <input type="text" id="program" name="program" value="{{ registration_data[3] }}"><br>
+        <label for="sdomain">Subdomain/Areas of Interest:</label><br>
+        <input type="text" id="sdomain" name="sdomain" value="{{ registration_data[4] }}"><br>
+        <label for="otherContact">Other contact info:</label><br>
+        <input type="text" id="otherContact" name="otherContact" value="{{ registration_data[5] }}"><br><br>
+        <input type="submit" value="Update">
+    </form></center>
+</body>
+</html>

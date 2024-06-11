@@ -1,0 +1,416 @@
+body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    color: white;
+    background-color: #1D1336;
+}
+
+.navbar {
+    background-color: transparent !important;
+    transition: background-color 0.5s ease;
+}
+
+.navbar.scrolled {
+    background-color: #1D1336 !important;
+}
+
+.nav-link {
+    margin-right: 20px;
+    box-shadow: inset 0 -2px 0 0 white;
+}
+
+.nav-link.active {
+    box-shadow: inset 0 -2px 0 0 orange;
+}
+
+.hero-banner {
+    position: relative;
+    background-image: url("/static/images/herobannerimage.png");
+    color: #ffffff;
+    height: 100vh;
+    background-color: rgba(104, 104, 104, 0.8); 
+    background-blend-mode: overlay;
+    background-size: cover;
+    background-position: center;
+    display: grid; /* Add this line */
+    grid-template-rows: 1fr auto; /* Add this line */
+  }
+  
+
+.slogan {
+    text-align: left;
+    padding: 20px;
+}
+
+.registration-form {
+    background-color: rgba(19, 15, 54, 0.553);
+    padding: 20px;
+    border-radius: 8px;
+    width: 300px;
+    margin: 20px auto; /* Center horizontally */
+    margin-top: 30vh;
+}
+
+.registration-form h2, .registration-form p {
+    margin: 0;
+    padding-bottom: 10px;
+}
+
+.registration-form form {
+    display: flex;
+    flex-direction: column;
+}
+
+input, select, button {
+    margin: 5px 0;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+.registration-form button:hover {
+    background-color: #6c107c;
+    color: #ffffff;
+}
+
+.typewriter {
+    overflow: hidden;
+    max-width: 100%;
+    height: fit-content;
+    border-right: .15em solid orange;
+    white-space: nowrap;
+    margin: 0 auto;
+    letter-spacing: .15em;
+    animation: typing 3.5s steps(30, end), blink-caret .75s step-end infinite;
+}
+
+
+.ytvideo {
+    margin-top: 20px;
+    width: 500px;
+    height: 300px;
+}
+.error {
+    border: 2px solid red !important; /* Red border for invalid fields */
+    border-radius: 5px; /* Border radius */
+}
+
+.alert {
+    position: fixed;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #28a745; /* Green background for success alert */
+    color: #ffffff;
+    padding: 10px 20px;
+    border-radius: 5px; /* Border radius */
+    z-index: 9999;
+    animation: slideInDown 0.5s, fadeOut 0.5s 2.5s;
+}
+
+.charts-section {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.chart-container {
+    width: calc(50% - 20px);
+    margin-bottom: 20px;
+    background-color: transparent;
+}
+/* Add this CSS for responsiveness */
+@media screen and (max-width: 768px) {
+    .charts-section {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .chart-container {
+        width: 100%;
+    }
+}
+
+
+@keyframes slideInDown {
+    0% {
+        transform: translateY(-100%);
+        opacity: 0;
+    }
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+@keyframes fadeOut {
+    0% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+    }
+}
+
+
+@keyframes typing {
+    from {
+        width: 0;
+    }
+    to {
+        width: 100%;
+    }
+}
+
+@keyframes blink-caret {
+    from, to {
+        border-color: transparent;
+    }
+    50% {
+        border-color: orange;
+    }
+}
+
+.maincontent-container {
+    margin-top: 20vh;
+}
+.mobilebr{
+    display: none;
+    position: relative;
+}
+
+
+@media (min-width: 992px) {
+    .hero-banner {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 40px;
+    }
+    .slogan {
+        margin-top: 200px;
+        flex-basis: 50%;
+        text-align: center;
+    }
+    
+    .registration-form {
+        flex-basis: 40%;
+        margin-top: 0; /* Remove top margin */
+    }
+}
+
+@media (max-width: 991px) {
+    .slogan {
+        
+        text-align: center;
+        margin-top: 15vh;
+    }
+    .registration-form {
+        width: 75%;
+    }
+    .mobilebr{
+        display: inline-block;
+        position: relative;
+    }
+    .ytvideo {
+        width: 300px;
+        height: 200px;
+    }
+    .hero-banner{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-flow: row;
+        flex-wrap: wrap;
+    }
+}
+
+.content {
+    padding: 20px;
+    background-color: #1D1336;
+}
+.achievements-list {
+    display: flex;
+    justify-content: space-around;
+    padding: 5px;
+    
+}
+
+.achievement-box {
+    text-align: center;
+    width: 100%;
+    padding: 10px;
+    margin: 10px;
+    flex-shrink: no;
+    background-color: #ffffff;  
+    border: 1px solid #cccccc; 
+    border-radius: 8px;
+}
+
+.floating-text {
+    font-size: 2em;
+    color: #ff7f0e; 
+}
+
+
+#achievements {
+    display: inline-block; /* Set display to inline-block */
+    padding: 0 20px; /* Padding for the sides, 0 for top and bottom */
+    background-color: #551163; /* Background color for content */
+    color: white;
+    border: 35px solid #1D1336; /* Add a border for the box */
+    border-radius: 5px; /* Add rounded corners to the box */
+}
+
+
+
+
+
+
+@keyframes floatingBanner {
+    0% {
+        transform: translateY(-50%);
+    }
+    100% {
+        transform: translateY(-55%);
+    }
+}
+
+@keyframes floatText {
+    0% {
+        transform: translateY(0);
+        color: #ffffff;
+    }
+    50% {
+        transform: translateY(-10px);
+        color: #ff7f0e;
+    }
+    100% {
+        transform: translateY(0);
+        color: #ffffff;
+    }
+}
+#additional-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding: 20px;
+}
+
+.collage {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.collage table {
+    border-collapse: collapse;
+}
+
+.collage td {
+    padding: 10px;
+    border: 2px solid white;
+}
+
+.collage img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: cover;
+}
+
+.achievements-list {
+    display: flex;
+    flex-direction: column;
+    margin-left: 20px; /* Adjust as needed */
+}
+
+
+.achievements-list {
+    display: flex;
+    flex-direction: column;
+}
+
+.achievement-box {
+    background-color: #6c107c;
+    color: white;
+    padding: 20px;
+    margin-bottom: 20px;
+    border-radius: 10px;
+}
+
+.achievement-box h3 {
+    margin-top: 0;
+}
+
+.achievement-box p {
+    margin-bottom: 0;
+}
+.collage img {
+    width: 370px; /* Adjust the width as needed */
+    height: auto; /* Maintain aspect ratio */
+    max-height: 370px; /* Set maximum height */
+    object-fit: cover; /* Maintain aspect ratio and cover entire cell */
+}
+/* Program Cards Styling */
+.programmes-offered-section .card {
+    margin-bottom: 20px;
+    border: none;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease-in-out;
+    background-color: antiquewhite;
+}
+.card:hover {
+    transform: translateY(-5px);
+}
+.card-body {
+    padding: 20px;
+}
+
+/* Modal Styling */
+.modal-content {
+    border-radius: 10px;
+}
+.modal-header {
+    border-bottom: none;
+}
+.modal-title {
+    font-size: 24px;
+    font-weight: bold;
+}
+.modal-body {
+    padding: 30px;
+}
+.form-group {
+    margin-bottom: 20px;
+}
+.btn-primary {
+    background-color: #26082b;
+    border: none;
+}
+.btn-primary:hover {
+    background-color: rgb(78, 0, 70);
+}
+.modal-body .form-group label{
+    font-size: 14px;
+    color: black;
+    font-weight: bold;
+}
+@media (min-width: 768px) {
+    .achievements-list {
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+
+    .achievement-box {
+        flex-basis: calc(50% - 20px); /* Adjust as needed */
+        margin-right: 20px; /* Adjust as needed */
+        margin-bottom: 20px;
+    }
+}
+#additional-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding: 35px 0; /* Adjust the top and bottom padding as needed */
+}

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration</title>
+</head>
+<body>
+    <h1>Registration Details</h1>
+
+    <table class="table">
+        <tr>
+            <td><strong>Full Name:</strong></td>
+            <td>{{ fullname }}</td>
+            <td><a href="{{ url_for('index') }}" class="btn btn-primary">Edit</a></td>
+        </tr>
+        <tr>
+            <td><strong>Email:</strong></td>
+            <td>{{ email }}</td>
+            <td><a href="{{ url_for('index') }}" class="btn btn-primary">Edit</a></td>
+        </tr>
+        <tr>
+            <td><strong>Domain/ Program:</strong></td>
+            <td>{{ program }}</td>
+            <td><a href="{{ url_for('') }}" class="btn btn-primary">Edit</a></td>
+        </tr>
+        <tr>
+            <td><strong>Subdomain/Areas of Interest:</strong></td>
+            <td>{{ sdomain }}</td>
+            <td><a href="{{ url_for('') }}" class="btn btn-primary">Edit</a></td>
+        </tr>
+        <tr>
+            <td><strong>Other contact info</strong></td>
+            <td>{{ otherContact }}</td>
+            <td><a href="{{ url_for('') }}" class="btn btn-primary">Edit</a></td>
+        </tr>
+    </table>
+    
+</body>
+</html>
