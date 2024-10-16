@@ -1,188 +1,429 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <title>Expertrons</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/expertronsstyle.css') }}">
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f8f9fa;
+            color: #333;
+        }
+
+        .navbar {
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .navbar-brand img {
+            max-height: 60px;
+        }
+
+        .hero-banner {
+            background: url('static/images/herobannerimage.png') no-repeat center center/cover;
+            color: #fff;
+            padding: 100px 15px;
+            text-align: center;
+        }
+
+        .hero-banner .slogan {
+            margin-bottom: 30px;
+        }
+
+        .hero-banner h1 {
+            font-size: 3rem;
+            font-weight: bold;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6);
+        }
+
+        .ytvideo {
+            width: 100%;
+            max-width: 560px;
+            height: 315px;
+            margin-top: 20px;
+            border: 2px solid #fff;
+            border-radius: 10px;
+        }
+
+        .registration-form {
+            background: rgba(255, 255, 255, 0.9);
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+            max-width: 400px;
+            margin-top: 20px;
+        }
+
+        .registration-form h2 {
+            font-size: 1.8rem;
+            margin-bottom: 15px;
+            color: #1A1337;
+        }
+
+        .registration-form input,
+        .registration-form select,
+        .registration-form button {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+
+        .registration-form button {
+            background-color: #1A1337;
+            color: #fff;
+            font-size: 1rem;
+            transition: background-color 0.3s ease;
+        }
+
+        .registration-form button:hover {
+            background-color: #563d7c;
+        }
+
+        .achievements-section {
+        padding: 60px 0;
+        text-align: center;
+        background-color: #f1f3f5;
+        }
+
+        .achievements-section h2 {
+        font-size: 2.5rem;
+        margin-bottom: 20px;
+        color: #1A1337;
+        font-weight: bold;
+        }
+
+.collage {
+    margin-bottom: 20px; /* Space between rows of images */
+}
+
+.img-container img {
+    width: 100%; /* Full width for the images inside the container */
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.achievements-list {
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin-left: 15px;
+}
+
+.list-item {
+    background-color: #fff;
+    border-radius: 8px;
+    padding: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    position: relative;
+}
+
+.list-item:hover {
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+    transform: translateY(-5px);
+}
+
+@media (max-width: 991px) {
+    .img-container img {
+        width: 100%;
+    }
+
+    .achievements-list {
+        margin-left: 0;
+    }
+}
+
+
+        footer {
+            background-color: #1A1337;
+            color: #fff;
+            padding: 40px 15px;
+        }
+
+        footer h5 {
+            font-size: 1.5rem;
+            margin-bottom: 20px;
+        }
+
+        footer ul {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        footer ul li {
+            margin-bottom: 10px;
+        }
+
+        footer ul li a {
+            color: #fff;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        footer ul li a:hover {
+            color: #aaa;
+        }
+    </style>
 </head>
+
 <body>
-    <div class="hero-image">
-        <nav class="navbar fixed-top navbar-expand-lg navbar-dark">
-            <div class="container-fluid">
-                <img src="{{ url_for('static', filename='images/Expertron logo.org.png') }}" alt="Logo" width="250">
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
-                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="collapse navbar-collapse" id="navbarNav">
-                    <ul class="navbar-nav ms-auto">
-                        <li class="nav-item">
-                            <a class="nav-link active" aria-current="page" href="#">Join Now</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#achievements">Achievements</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">Partnerships</a>
-                        </li>
-                        <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
-                                data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                Programmes Offered
-                            </a>
-                            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                <li><a class="dropdown-item" href="{{ url_for('static', filename='files/fullstack.pdf') }}" download>Full Stack</a></li>
-                                <li><a class="dropdown-item" href="{{ url_for('static', filename='files/dsai.pdf') }}" download>Data Science</a></li>
-                                <li><a class="dropdown-item" href="{{ url_for('static', filename='files/speakeasy.pdf') }}" download>Speak Easy</a></li>
-                                <li><a class="dropdown-item" href="{{ url_for('static', filename='files/bfsi.pdf') }}" download>BFSI</a></li>
-                                <li><a class="dropdown-item" href="{{ url_for('static', filename='files/supplychain.pdf') }}" download>Supply Chain</a></li>
-                            </ul>
-                        </li>
-                        <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="#" id="internshipsDropdown" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                Internships
-                            </a>
-                            <ul class="dropdown-menu" aria-labelledby="internshipsDropdown">
-                                <li><a class="dropdown-item" href="{{ url_for('download_file', filename='files/fullstackint.pdf') }}">Full Stack Internship</a></li>
-                                <li><a class="dropdown-item" href="{{ url_for('download_file', filename='files/dsaiint.pdf') }}">Data Science Internship</a></li>
-                                <li><a class="dropdown-item" href="{{ url_for('download_file', filename='files/speakeasyint.pdf') }}">Speak Easy Internship</a></li>
-                                <li><a class="dropdown-item" href="{{ url_for('download_file', filename='files/bfsiint.pdf') }}">BFSI Internship</a></li>
-                                <li><a class="dropdown-item" href="{{ url_for('download_file', filename='files/supplychainint.pdf') }}">Supply Chain Internship</a></li>
-                            </ul>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">About</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">Contact</a>
-                        </li>
+
+    <nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-dark">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">
+                <img src="{{ url_for('static', filename='images/logo.png') }}" alt="Logo">
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    {% if session.get('fullname') %}
+                    <li class="nav-item">
+                        <span class="nav-link">Welcome, {{ session.get('fullname') }}</span>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ url_for('logout') }}">Logout</a>
+                    </li>
+                    <!-- Programs Dropdown -->
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="programmesDropdown" role="button"
+                            data-bs-toggle="dropdown" aria-expanded="false">
+                            Programmes Offered
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="programmesDropdown">
+                            <li><a class="dropdown-item" href="{{ url_for('protected_download', filename='fullstack.pdf') }}">Full Stack</a></li>
+                            <li><a class="dropdown-item" href="{{ url_for('protected_download', filename='dsai.pdf') }}">Data Science</a></li>
+                            <li><a class="dropdown-item" href="{{ url_for('protected_download', filename='speakeasy.pdf') }}">Speak Easy</a></li>
+                            <li><a class="dropdown-item" href="{{ url_for('protected_download', filename='bfsi.pdf') }}">BFSI</a></li>
+                            <li><a class="dropdown-item" href="{{ url_for('protected_download', filename='supplychain.pdf') }}">Supply Chain</a></li>
+                        </ul>
+                    </li>
+                    <!-- Internships Dropdown -->
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="internshipsDropdown" role="button"
+                            data-bs-toggle="dropdown" aria-expanded="false">
+                            Internships
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="internshipsDropdown">
+                            <li><a class="dropdown-item" href="{{ url_for('protected_download', filename='markint.pdf') }}">Marketing</a></li>
+                            <li><a class="dropdown-item" href="{{ url_for('protected_download', filename='hrint.pdf') }}">Human Resources</a></li>
+                            <li><a class="dropdown-item" href="{{ url_for('protected_download', filename='schainint.pdf') }}">Supply Chain and Logistics</a></li>
+                        </ul>
+                    </li>
+                    {% else %}
+                    <!-- If not logged in, show Join Now link -->
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Join Now</a>
+                    </li>
+                    {% endif %}
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="hero-banner">
+        <div class="container">
+            <div class="row align-items-center">
+                {% if session.get('fullname') %}
+                <!-- If logged in, show welcome message -->
+                <div class="col-lg-6 d-flex flex-column align-items-center mb-4 mb-lg-0">
+                    <h2>Welcome, {{ session.get('fullname') }}</h2>
+                </div>
+                {% else %}
+                <!-- Registration form if not logged in -->
+                <div class="col-lg-6 mb-4 mb-lg-0 d-flex justify-content-center">
+                    <div class="registration-form">
+                        <h2>Register Now</h2>
+                        <form action="{{ url_for('submit_form') }}" method="POST">
+                            <input type="text" class="form-control mb-2" name="fullName" id="fullName" placeholder="Full Name" required>
+                            <input type="email" class="form-control mb-2" name="email" id="email" placeholder="Email" required>
+                            <input type="text" class="form-control mb-2" name="phoneNumber" id="phoneNumber" placeholder="Phone Number" required>
+                            <select class="form-control mb-2" name="program" id="program" required>
+                                <option value="" disabled selected>Select a Program</option>
+                                <option value="fullstack">Full Stack Development</option>
+                                <option value="datascience">Data Science</option>
+                                <option value="speakeasy">Speak Easy</option>
+                                <option value="bfsi">BFSI</option>
+                                <option value="supplychain">Supply Chain Management</option>
+                            </select>
+                            <button type="submit" class="btn btn-primary w-100">Submit</button>
+                        </form>                        
+                    </div>
+                </div>
+                {% endif %}
+                <div class="col-lg-6">
+                    <div id="videoCarousel" class="carousel slide ytvideo" data-bs-ride="carousel" data-bs-interval="2000">
+                        <div class="carousel-inner">
+                            {% for video in videos %}
+                            <div class="carousel-item {% if loop.first %}active{% endif %}">
+                                <div class="embed-responsive embed-responsive-16by9">
+                                    <iframe class="embed-responsive-item" width="560" height="315" src="{{ video }}"
+                                        title="YouTube video player" frameborder="0"
+                                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                                        allowfullscreen></iframe>
+                                </div>
+                            </div>
+                            {% endfor %}
+                        </div>
+                        <button class="carousel-control-prev" type="button" data-bs-target="#videoCarousel"
+                            data-bs-slide="prev">
+                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                            <span class="visually-hidden">Previous</span>
+                        </button>
+                        <button class="carousel-control-next" type="button" data-bs-target="#videoCarousel"
+                            data-bs-slide="next">
+                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                            <span class="visually-hidden">Next</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <section id="achievements" class="achievements-section">
+        <h2>Our Achievements</h2>
+        <div class="container">
+            <div class="row">
+                <!-- Achievement Images -->
+                <div class="col-lg-6 col-md-6">
+                    <div class="collage d-flex justify-content-between">
+                        <div class="img-container">
+                            <img src="static/images/Achievement 1.png" alt="Achievement 1">
+                        </div>
+                        <div class="img-container">
+                            <img src="static/images/Achievement 2.png" alt="Achievement 2">
+                        </div>
+                    </div>
+                    <div class="collage d-flex justify-content-between">
+                        <div class="img-container">
+                            <img src="static/images/Achivement 3.png" alt="Achievement 3">
+                        </div>
+                        <div class="img-container">
+                            <img src="static/images/Achievement 4.png" alt="Achievement 4">
+                        </div>
+                    </div>
+                </div>
+                <!-- Achievements List -->
+                <div class="col-lg-6 col-md-6 d-flex align-items-center">
+                    <div class="achievements-list">
+                        <div class="list-item">
+                            <span>Over 50,000+ successful alumni</span>
+                        </div>
+                        <div class="list-item">
+                            <span>Partnered with 100+ companies worldwide</span>
+                        </div>
+                        <div class="list-item">
+                            <span>Recognized as an innovative leader in tech education</span>
+                        </div>
+                        <div class="list-item">
+                            <span>Highly rated programs with industry-relevant curriculum</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+
+    <footer id="footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4">
+                    <h5>Contact Us</h5>
+                    <ul>
+                        <li>Email: support@expertrons.com</li>
+                        <li>Phone: +91-123-456-7890</li>
+                        <li>Address: 123 Expertrons Lane, Mumbai, India</li>
+                    </ul>
+                </div>
+                <div class="col-md-4">
+                    <h5>Quick Links</h5>
+                    <ul>
+                        <li><a href="#achievements">Achievements</a></li>
+                        <li><a href="#">Join Now</a></li>
+                        <li><a href="#">Programs Offered</a></li>
+                        <li><a href="#">Internships</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-4">
+                    <h5>Follow Us</h5>
+                    <ul>
+                        <li><a href="#">LinkedIn</a></li>
+                        <li><a href="#">Twitter</a></li>
+                        <li><a href="#">Facebook</a></li>
+                        <li><a href="#">Instagram</a></li>
                     </ul>
                 </div>
             </div>
-        </nav>
-
-        <li><a class="dropdown-item" href="{{ url_for('download_file', filename='fullstack_internship.pdf') }}">Full Stack Internship</a></li>
-
-
-        <div class="hero-banner">
-            <div class="slogan">
-                <h1 class="typewriter">Transform Your Career <br class="mobilebr"> with JK-Expertrons</h1>
-                <iframe class="ytvideo" src="https://www.youtube.com/embed/2Y6YZMAe3uc?si=UGFH-n777CxGO-NF" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-            </div>
-            <div class="registration-form">
-                <h2>Admissions Open</h2>
-                <p>For Graduates and Final Year Students Only</p>
-                <form action="{{ url_for('submit_form') }}" method="POST">
-                    {% if error %}
-                        <div class="alert alert-danger">{{ error }}</div>
-                    {% endif %}
-                    <input type="text" name="fullName" placeholder="Full Name:" required>
-                    <input type="email" name="email" placeholder="Email ID:" required>
-                    <select name="preferred_domain">
-                        <option value="">Select Domain</option>
-                        <option value="tech">Tech</option>
-                        <option value="business">Business</option>
-                        <option value="healthcare">Healthcare</option>
-                    </select>
-                    <select name="career_stage">
-                        <option value="">Career Stage</option>
-                        <option value="entry">Entry Level</option>
-                        <option value="mid">Mid Level</option>
-                        <option value="senior">Senior Level</option>
-                    </select>
-                    <input type="date" name="birthdate">
-                    <input type="time" name="preferred_time" required>
-                    <button type="submit">Register Now</button>
-                </form>
-            </div>
         </div>
-    </div>
+    </footer>
 
-    <section id="achievements" class="achievements-section" style="margin-left: 600px;margin-top: 23px;">
-        <!-- Add your achievements content here -->
-    </section>
-
-    <section id="additional-content" class="d-flex justify-content-center flex-wrap">
-        <div class="row">
-            <div class="col-md-6 col-sm-12">
-                <div class="collage" style="margin-left: 20px;">
-                    <table style="border-collapse: collapse;">
-                        <tr>
-                            <td style="border: 0px"><img src="{{ url_for('static', filename='images/Achievement 1.png') }}" alt="Achievement 1"></td>
-                            <td style="border: 0px"><img src="{{ url_for('static', filename='images/Achievement 2.png') }}" alt="Achievement 2"></td>
-                        </tr>
-                        <tr>
-                            <td style="border: 0px"><img src="{{ url_for('static', filename='images/Achivement 3.png') }}" alt="Achivement 3"></td>
-                            <td style="border: 0px"><img src="{{ url_for('static', filename='images/Achievement 4.png') }}" alt="Achievement 4"></td>
-                        </tr>
-                    </table>
-                </div>
-            </div>
-            <div class="col-md-6 col-sm-12">
-                <div class="achievements-list">
-                    <div class="achievement-box">
-                        <h3 class="floating-text" data-target="124000000">124,000,000+</h3>
-                        <p>Minutes spent on App</p>
-                    </div>
-                    <div class="achievement-box">
-                        <h3 class="floating-text" data-target="7500">7500+</</h3>
-                        <p>Live Experts</p>
-                    </div>
-                    <div class="achievement-box">
-                        <h3 class="floating-text" data-target="20000">20,000+</h3>
-                        <p>Total aspirants Trained</p>
-                    </div>
-                    <div class="achievement-box">
-                        <h3 class="floating-text" data-target="100000">1,00,000+</h3>
-                        <p>Minutes of career hacks</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <div class="charts-container d-flex justify-content-center flex-wrap">
-        <div class="chart">
-            {{ charts_div.placement_chart_div | safe }}
-        </div>
-        <div class="chart">
-            {{ charts_div.completion_rate_chart_div | safe }}
-        </div>
-        <div class="chart">
-            {{ charts_div.fastest_placement_chart_div | safe }}
-        </div>
-        <div class="chart">
-            {{ charts_div.mentors_chart_div | safe }}
-        </div>
-    </div>
-
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-JEXQr6Z3G0J0AYThtuy1h8W8jEGkg7kZ/lQFvXpk0VwLzQ6q0F3G2nDGpr47MLh3"
-        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
+        integrity="sha384-oBqDVmMz4fnFO9gybBogGzH7rAT17ZL8aG1z7GEtQ/6baJ9K2idKkFZg26CR2K8y" crossorigin="anonymous">
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js"
+        integrity="sha384-GOa6tWtM9hOeLJtLj9rMTBmG+F7KNmwwG4c2JrR7x92uWMCDBnzCXyl+j4L9WXkQ" crossorigin="anonymous">
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     <script>
-        // JavaScript for handling dropdowns
-        document.addEventListener('DOMContentLoaded', function () {
-            const dropdowns = document.querySelectorAll('.dropdown');
-            dropdowns.forEach(dropdown => {
-                dropdown.addEventListener('click', function (e) {
-                    e.stopPropagation();
-                    this.classList.toggle('show');
-                    const menu = this.querySelector('.dropdown-menu');
-                    menu.classList.toggle('show');
-                });
-            });
+        // Initialize the carousel
+        var videoCarousel = new bootstrap.Carousel(document.getElementById('videoCarousel'), {
+            interval: 2000
+        });
 
-            document.addEventListener('click', function () {
-                dropdowns.forEach(dropdown => {
-                    dropdown.classList.remove('show');
-                    const menu = dropdown.querySelector('.dropdown-menu');
-                    menu.classList.remove('show');
+        // Function to handle YouTube events
+        function onYouTubeIframeAPIReady() {
+            var iframes = document.querySelectorAll('iframe');
+
+            iframes.forEach(function(iframe) {
+                // Initialize YouTube Player for each iframe
+                var player = new YT.Player(iframe, {
+                    events: {
+                        'onStateChange': function(event) {
+                            if (event.data === YT.PlayerState.PLAYING) {
+                                videoCarousel.pause(); // Pause carousel when video starts playing
+                            } else if (event.data === YT.PlayerState.ENDED || event.data === YT.PlayerState.PAUSED) {
+                                videoCarousel.cycle(); // Resume carousel when video ends or pauses
+                            }
+                        }
+                    }
                 });
             });
+        }
+
+        // Load YouTube IFrame API
+        var tag = document.createElement('script');
+        tag.src = "https://www.youtube.com/iframe_api";
+        var firstScriptTag = document.getElementsByTagName('script')[0];
+        firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+
+        // Show/hide prev/next buttons on hover
+        document.getElementById('videoCarousel').addEventListener('mouseenter', function () {
+            document.querySelector('.carousel-control-prev').style.opacity = '1';
+            document.querySelector('.carousel-control-next').style.opacity = '1';
+        });
+
+        document.getElementById('videoCarousel').addEventListener('mouseleave', function () {
+            document.querySelector('.carousel-control-prev').style.opacity = '0';
+            document.querySelector('.carousel-control-next').style.opacity = '0';
         });
     </script>
+
+    <script>
+        const error = "{{ error }}";
+        if (error) {
+            alert(error);
+        }
+    </script>
 </body>
+
 </html>
