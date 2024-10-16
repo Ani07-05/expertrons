@@ -26,4 +26,3 @@ bootstrap-flask==2.3.3
 gunicorn==20.1.0
 
 # Other useful packages
-pandas==1.3.3
