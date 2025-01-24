@@ -4,6 +4,7 @@ flask-wtf==1.0.0
 flask-sqlalchemy==2.5.1
 flask-login==0.5.0
 Werkzeug==2.2.2
+plotly==5.3.1
 
 # Google Sheets API client
 gspread==5.4.0
